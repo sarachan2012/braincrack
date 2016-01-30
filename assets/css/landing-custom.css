@@ -1,5 +1,18 @@
+.banner-col{
+    padding-right: 0;
+    padding-left: 0;
+}
+.intro-header{
+    padding-top: 0px;
+    background:grey url(../img/heart2.jpg) no-repeat center center;
+}
+.search-bar-wrapper{
+    margin-top: 8.5%;
+    background-color: rgba(0,0,0,0.6);
+}
 .search-bar{
-    padding-top: 10%;
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
     width: 70%;
     vertical-align: middle;
     margin: 0 auto;
@@ -35,7 +48,7 @@
 }
 .intro-message{
     padding-bottom: 8%;
-    padding-top: 18%;
+    padding-top: 5%;
 }
 .no-border{
     border-radius: 0px !important;
@@ -45,20 +58,20 @@
 
 .navbar-custom{
     margin-bottom: 0;
-/*    background:rgba(0,0,0,0.1);*/
-/*    background: none;*/
-/*    border: none;*/
-/*    color: #fff;*/
 }
 .navbar-custom .navbar-nav>li>a,
 .navbar-custom .navbar-nav>li>a:hover{
-/*    color: #fff;*/
+    color: #000;
+
 }
 .logo{
     padding: 0px;
-    height:60px;
-    width: 150px;
-    margin-top:-3px;
+    height:30px;
+    width: 120px;
+    margin-top: 8px;
+    margin-left: 3px;
+/*    margin-top:-3px;*/
+    display:block;
 }
 @media (min-width: 768px){
     .navbar-custom{
@@ -69,12 +82,22 @@
     }
     .logo{
         padding: 0px;
-        height:68px;
+        height:40px;
         width: 150px;
-        margin-top:-5px;
+        margin-top: 5px;
+        /*    margin-top:-3px;*/
+        display:block;
     }
 }
 .logo-link{
     padding: 0;
 }
 
+.ddl-sub-link{
+    text-decoration: none;
+    color: #333;
+    font-weight: normal;
+}
+.ddl-sub-link:hover{
+    text-decoration: none;
+}
