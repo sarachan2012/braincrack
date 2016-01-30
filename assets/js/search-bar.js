@@ -1,5 +1,5 @@
 $(document).ready(function(e){
-    $('.banner-search .search-panel .dropdown-menu').find('a').click(function(e) {
+    $('.search-bar .search-panel .dropdown-menu').find('a').click(function(e) {
         e.preventDefault();
         var param = $(this).attr("href").replace("#","");
         var concept = $(this).text();
