@@ -1,0 +1,64 @@
+body{
+    background-color: #fff;
+}
+
+.cd-filter::before {
+    background-color:#EB5A69;
+}
+a.cd-filter-trigger{
+    text-decoration: none;
+}
+.cd-filter-trigger.filter-is-visible {
+    text-decoration: none;
+}
+.no-touch .cd-filter .cd-close:hover {
+    background: #32255f;
+    text-decoration: none;
+}
+.cd-filter .cd-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 50px;
+    line-height: 50px;
+    width: 60px;
+    color: #fff;
+    font-size: 1.3rem;
+    text-align: center;
+    background: #EB5A59;
+    opacity: 0;
+    -webkit-transition: opacity 0.3s;
+    -moz-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+    z-index: 3;
+    text-decoration: none;
+}
+.no-touch .cd-filter .cd-close:hover {
+    background: #32255f;
+}
+.cd-gallery li{
+    box-shadow:none;
+}
+.cd-tab-filter a.selected{
+    background-color: #fff;
+    color: #EB5A69;
+    box-shadow: inset 0 -2px 0 #EB5A69;
+    text-decoration: none;
+}
+@media only screen and (min-width: 768px)
+    .cd-tab-filter a.selected {
+        background: transparent;
+        color: #EB5A69;
+        box-shadow: inset 0 -2px 0 #EB5A69;
+    }
+    .no-touch .cd-tab-filter a:hover {
+        color: #EB5A69;
+        text-decoration: none;
+    }
+}
+
+.cd-filter-trigger {
+    color: #fff;
+    background: #fff url("../img/cd-icon-filter.svg") no-repeat center center;
+
+}
