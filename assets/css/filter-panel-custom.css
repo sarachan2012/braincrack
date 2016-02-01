@@ -1,0 +1,37 @@
+.panel-heading span {
+    margin-top: -20px;
+    font-size: 15px;
+}
+.row {
+/*    margin-top: 40px;*/
+    padding: 0 10px;
+}
+.clickable {
+    cursor: pointer;
+}
+.panel-filter .panel-heading{
+    background-color: #ffffff;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
+    z-index: 1;
+}
+.panel-filter .panel-body{
+    background-color: #eee;
+}
+.filter-section-header{
+    font-size: 16px;
+}
+.divider-bottom {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 8px;
+}
+
+.divider-right {
+    border-right: 1px solid #ccc;
+/*    border-right:none;*/
+}
+@media (max-width:767px) {
+    .divider-right{
+/*        border-right: 1px solid #ccc;*/
+        border-right: none;
+    }
+}
