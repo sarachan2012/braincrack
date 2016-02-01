@@ -4,167 +4,152 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title> Product List </title>
         <link rel="stylesheet" href = "http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/vendor/filter/css/reset.css"> <!-- CSS reset -->
-        <link rel="stylesheet" href="assets/vendor/filter/css/style.css"> <!-- Resource style -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+        <link href="assets/vendor/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+        <link href="assets/css/general-custom.css" rel="stylesheet">
+        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
         <link rel="stylesheet" href="assets/css/product-list.css">
         <link rel="stylesheet" href="assets/css/products-custom.css">
-        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-        <script src="assets/vendor/filter/js/modernizr.js"></script> <!-- Modernizr -->
+        <link rel="stylesheet" href="assets/css/filter-panel-custom.css">
+
     </head>
     <body>
         <div ng-include="'views/navigation.html'"></div>
-        <div class="container-fluid">
+        <div class="container">
+           <div class="row">
+               <div class="col-md-12">
+                   <h1 class="page-header">All Products</h1>
+               </div>
+           </div>
             <div class="row">
-                <main class="cd-main-content">
-                    <div class="cd-tab-filter-wrapper">
-                        <div class="cd-tab-filter">
-                            <ul class="cd-filters">
-                                <li class="placeholder">
-                                    <a data-type="all" href="#0">All</a> <!-- selected option on mobile -->
-                                </li>
-                                <li class="filter"><a class="selected" href="#0" data-type="all">All</a></li>
-                                <li class="filter" data-filter=".color-1"><a href="#0" data-type="color-1">Color 1</a></li>
-                                <li class="filter" data-filter=".color-2"><a href="#0" data-type="color-2">Color 2</a></li>
-                            </ul> <!-- cd-filters -->
-                        </div> <!-- cd-tab-filter -->
-                    </div> <!-- cd-tab-filter-wrapper -->
-
-                    <section class="cd-gallery">
-                        <ul class="thumbnail-list">
-                            <li class="mix color-1 check1 radio2 option3">
-                                <div class="box">
-                                    <a href="#" class="">
-                                        <img src="http://placehold.it/400x400" class="">
-                                        <div class="ribbon"><span>New</span></div>
-                                    </a>
+                <div class="col-md-12">
+                    <div class="panel panel-default panel-filter no-border">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-filter"></i> Filter</h3>
+                            <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-3 divider-right">
+                                    <div class="divider-bottom">
+                                       <input type="text" class="form-control no-border" name="filter-box" value="" placeholder="Enter keywords..."/>
+                                    </div>
+                                    <div>
+                                        <span class="filter-section-header">Gender</span>
+                                        <div class="checkbox">
+                                            <input type="checkbox" class="styled" id="female" value="female" aria-label="female">
+                                            <label for="female"> Just For Her</label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <input type="checkbox" class="styled" id="male" value="male" aria-label="male">
+                                            <label for="male"> Just For Him</label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <input type="checkbox" class="styled" id="unisex" value="unisex" aria-label="unisex">
+                                            <label for="unisex">Unisex</label>
+                                        </div>
+                                    </div>
                                 </div>
-                                <h4 class="">Product Name Product Name Product Name</h4>
-                                <div class="product-price"> <span class="cut-price">MYR290.00</span>
-                                    <span class="normal-price">MYR230.00</span>
+                                <div class="col-md-3 divider-right">
+                                    <div>
+                                        <span class="filter-section-header">Occasions</span>
+                                        <div class="checkbox">
+                                            <input type="checkbox" class="styled" id="christmas" value="christmas" aria-label="christmas">
+                                            <label for="christmas"> Christmas</label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <input type="checkbox" class="styled" id="valentines" value="valentines" aria-label="valentines">
+                                            <label for="valentines"> Valentines Day</label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <input type="checkbox" class="styled" id="birthday" value="birthday" aria-label="birthday">
+                                            <label for="birthday">Birthday</label>
+                                        </div>
+                                    </div>
                                 </div>
-                                <button type="button" class="btn btn-default navbar-btn">Add to Cart</button>
-                            </li>
-                            <li class="mix color-2 check2 radio2 option2">
-                                <div class="box">
-                                    <a href="#" class=""><img src="http://placehold.it/400x400" class=""></a>
+                                <div class="col-md-3 divider-right">
+                                    <div>
+                                        <span class="filter-section-header">Personality</span>
+                                        <div class="checkbox">
+                                            <input type="checkbox" class="styled" id="manly" value="manly" aria-label="manly">
+                                            <label for="manly">Manly</label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <input type="checkbox" class="styled" id="feminine" value="feminine" aria-label="feminine">
+                                            <label for="feminine">Feminine</label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <input type="checkbox" class="styled" id="sporty" value="sporty" aria-label="sporty">
+                                            <label for="sporty">Sporty</label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <input type="checkbox" class="styled" id="classy" value="classy" aria-label="classy">
+                                            <label for="classy">classy</label>
+                                        </div>
+                                    </div>
                                 </div>
-                                <h4 class="">Product Name</h4>
-                                <div class="product-price"> <span class="cut-price">MYR290.00</span>
-                                    <span class="normal-price">MYR230.00</span>
+                                <div class="col-md-3">
+                                    <div>
+                                        <span class="filter-section-header">Category</span>
+                                        <div class="checkbox">
+                                            <input type="checkbox" class="styled" id="music" value="music" aria-label="music">
+                                            <label for="music"> Music</label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <input type="checkbox" class="styled" id="crafts" value="crafts" aria-label="crafts">
+                                            <label for="crafts">Crafts</label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <input type="checkbox" class="styled" id="otaku" value="otaku" aria-label="otaku">
+                                            <label for="otaku">Otaku</label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <input type="checkbox" class="styled" id="cooking" value="cooking" aria-label="cooking">
+                                            <label for="cooking">Cooking/Baking</label>
+                                        </div>
+                                    </div>
                                 </div>
-                                <button type="button" class="btn btn-default navbar-btn">Add to Cart</button>
-                            </li>
-                            <li class="mix color-1 check3 radio3 option1">
-                                <a href="#" class=""><img src="http://placehold.it/400x400" class=""></a>
-                                <h4 class="">Product Name</h4>
-                                <div class="product-price"> <span class="cut-price">MYR290.00</span>
-                                    <span class="normal-price">MYR230.00</span>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <button type="button" name="filter-product-btn" class="btn btn-primary" style="float:right;">Filter</button>
                                 </div>
-                                <button type="button" class="btn btn-default navbar-btn">Add to Cart</button>
-                            </li>
-                            <li class="mix color-1 check3 radio2 option4">
-                                <a href="#" class=""><img src="http://placehold.it/400x400" class=""></a>
-                                <h4 class="">Product Name</h4>
-                                <div class="product-price"> <span class="cut-price">MYR290.00</span>
-                                    <span class="normal-price">MYR230.00</span>
-                                </div>
-                                <button type="button" class="btn btn-default navbar-btn">Add to Cart</button>
-                            </li>
-                            <li class="mix color-1 check1 radio3 option2">
-                                <a href="#" class=""><img src="http://placehold.it/400x400" class=""></a>
-                                <h4 class="">Product Name</h4>
-                                <div class="product-price"> <span class="cut-price">MYR290.00</span>
-                                    <span class="normal-price">MYR230.00</span>
-                                </div>
-                                <button type="button" class="btn btn-default navbar-btn">Add to Cart</button>
-                            </li>
-                        </ul>
-                        <div class="cd-fail-message">No results found</div>
-                    </section> <!-- cd-gallery -->
+                            </div>
+                        </div>
+                    </div>
 
-                    <div class="cd-filter">
-                        <form>
-                            <div class="cd-filter-block">
-                                <h4>Search</h4>
-
-                                <div class="cd-filter-content">
-                                    <input type="search" placeholder="Try color-1...">
-                                </div> <!-- cd-filter-content -->
-                            </div> <!-- cd-filter-block -->
-
-                            <div class="cd-filter-block">
-                                <h4>Check boxes</h4>
-
-                                <ul class="cd-filter-content cd-filters list">
-                                    <li>
-                                        <input class="filter" data-filter=".check1" type="checkbox" id="checkbox1">
-                                        <label class="checkbox-label" for="checkbox1">Option 1</label>
-                                    </li>
-
-                                    <li>
-                                        <input class="filter" data-filter=".check2" type="checkbox" id="checkbox2">
-                                        <label class="checkbox-label" for="checkbox2">Option 2</label>
-                                    </li>
-
-                                    <li>
-                                        <input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
-                                        <label class="checkbox-label" for="checkbox3">Option 3</label>
-                                    </li>
-                                </ul> <!-- cd-filter-content -->
-                            </div> <!-- cd-filter-block -->
-
-                            <div class="cd-filter-block">
-                                <h4>Select</h4>
-
-                                <div class="cd-filter-content">
-                                    <div class="cd-select cd-filters">
-                                        <select class="filter" name="selectThis" id="selectThis">
-                                            <option value="">Choose an option</option>
-                                            <option value=".option1">Option 1</option>
-                                            <option value=".option2">Option 2</option>
-                                            <option value=".option3">Option 3</option>
-                                            <option value=".option4">Option 4</option>
-                                        </select>
-                                    </div> <!-- cd-select -->
-                                </div> <!-- cd-filter-content -->
-                            </div> <!-- cd-filter-block -->
-
-                            <div class="cd-filter-block">
-                                <h4>Radio buttons</h4>
-
-                                <ul class="cd-filter-content cd-filters list">
-                                    <li>
-                                        <input class="filter" data-filter="" type="radio" name="radioButton" id="radio1" checked>
-                                        <label class="radio-label" for="radio1">All</label>
-                                    </li>
-
-                                    <li>
-                                        <input class="filter" data-filter=".radio2" type="radio" name="radioButton" id="radio2">
-                                        <label class="radio-label" for="radio2">Choice 2</label>
-                                    </li>
-
-                                    <li>
-                                        <input class="filter" data-filter=".radio3" type="radio" name="radioButton" id="radio3">
-                                        <label class="radio-label" for="radio3">Choice 3</label>
-                                    </li>
-                                </ul> <!-- cd-filter-content -->
-                            </div> <!-- cd-filter-block -->
-                        </form>
-
-                        <a href="#0" class="cd-close">Close</a>
-                    </div> <!-- cd-filter -->
-
-                    <a href="#0" class="cd-filter-trigger">Filters</a>
-                </main> <!-- cd-main-content -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="thumbnail-list">
+                        <li>
+                            <div class="box">
+                                <a href="#" class="">
+                                    <img src="http://placehold.it/400x400" class="">
+                                    <div class="ribbon"><span>New</span></div>
+                                </a>
+                            </div>
+                            <h4 class="">Product Name Product Name Product Name</h4>
+                            <div class="product-price"> <span class="cut-price">MYR290.00</span>
+                                <span class="normal-price">MYR230.00</span>
+                            </div>
+                            <button type="button" class="btn btn-default navbar-btn">Add to Wishlist</button>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
+        <div ng-include="'views/footer.html'"></div>
         <!-- angular fire stuff -->
-        <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-route.js"></script>
         <script src="https://cdn.firebase.com/js/client/2.0.4/firebase.js"></script>
         <script src="https://cdn.firebase.com/libs/angularfire/1.0.0/angularfire.min.js"></script>
-
-        <script src="assets/js/app.js"></script>
-        <script src="assets/vendor/filter/js/jquery.mixitup.min.js"></script>
-        <script src="assets/vendor/filter/js/main.js"></script> <!-- Resource jQuery -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <script src="app.js"></script>
+        <script type="text/javascript" src="assets/js/filter-panel.js"></script>
     </body>
 </html>

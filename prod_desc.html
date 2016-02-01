@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Product description</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link rel="stylesheet" href = "http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+        <link href="assets/vendor/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+        <link href="assets/css/general-custom.css" rel="stylesheet">
+        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+        <!-- Custom CSS -->
+        <link href="assets/vendor/item/css/shop-item.css" rel="stylesheet">
+        <link href="assets/css/shop-item-custom.css" rel="stylesheet">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+
+    <body>
+        <div ng-include="'views/navigation.html'"></div>
+        <div class="extra-50-bottom-padding"></div>
+        <!-- Page Content -->
+        <div class="container" ng-controller="mainCtrl" ng-init="user_profile(loggedUser)">
+            <div class="row">
+               <div class="col-xs-6 col-md-4">
+                   <img src="assets/img/featured_3d_pen.png" class="img-responsive" >
+               </div>
+                <div class="col-xs-6 col-md-8">
+                    <div class="thumbnail">
+                        <div class="caption-full">
+                            <h4 class="pull-right">SGD 99</h4>
+                            <h4><a href="#">3D Pen</a>
+                            </h4>
+                            <p>It's a pen that can draw in the air! 3Doodler is the 3D printing pen you can hold in your hand. Lift your imagination off the page!</p>
+                            <p><b>Location:</b> Plaza Singapura, Level 4 #04-55 <br/> <b>Shop Name:</b> The Box</p>
+                            <p>
+                                Tags:
+                            </p>
+                            <p>
+                                <span class="label label-primary">birthday</span> &nbsp; <span class="label label-primary">just for him</span>
+                            </p>
+                        </div>
+                        <div class="ratings">
+                            <p class="pull-right">3 reviews</p>
+                            <p>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star-empty"></span>
+                                4.0 stars
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="extra-30-bottom-margin"></div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="well">
+                        <div>
+                            <form ng-submit="addReview('1', user)">
+                                <input type="hidden" ng-model='user.uid' value="{{user.uid}}" />
+                                <textarea ng-model="review.comment" name="comment" id="comments" class="form-control no-border" placeholder="Leave a review..." rows=5></textarea>
+                                <div class="extra-30-bottom-margin"></div>
+                                <div class="text-right">
+                                    <button type="submit" class="btn btn-success">Leave a Review</button>
+                                </div>
+                            </form>
+                        </div>
+                        <hr ng-init="getAllReviews('1')">
+                        <div ng-repeat="review in reviews">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                    {{ review.userName }}
+                                    <span class="pull-right">{{ review.create_on}}</span>
+                                    <p>{{ review.comment}}</p>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.container -->
+        <div ng-include="'views/footer.html'"></div>
+        <!-- /.container -->
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-route.js"></script>
+        <script src="https://cdn.firebase.com/js/client/2.0.4/firebase.js"></script>
+        <script src="https://cdn.firebase.com/libs/angularfire/1.0.0/angularfire.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <script src="app.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="assets/vendor/item/js/bootstrap.min.js"></script>
+
+    </body>
+
+</html>
