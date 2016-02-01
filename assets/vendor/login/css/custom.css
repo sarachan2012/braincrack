@@ -1,0 +1,13 @@
+body{
+	background: rgba(19, 35, 47, 0.9);
+}
+body:before{
+	background: rgba(255, 255, 255, 0.1);
+}
+.container .info {
+	margin: 80px auto;
+}
+
+.form button{
+	background: #1ab188;	
+}
