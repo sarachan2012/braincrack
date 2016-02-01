@@ -8,10 +8,12 @@
         <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
         <link href="assets/vendor/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
         <link href="assets/css/general-custom.css" rel="stylesheet">
+        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
         <link rel="stylesheet" href="assets/css/product-list.css">
         <link rel="stylesheet" href="assets/css/products-custom.css">
         <link rel="stylesheet" href="assets/css/filter-panel-custom.css">
-        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
     </head>
     <body>
         <div ng-include="'views/navigation.html'"></div>
@@ -140,12 +142,14 @@
                 </div>
             </div>
         </div>
+        <div ng-include="'views/footer.html'"></div>
         <!-- angular fire stuff -->
-        <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-route.js"></script>
         <script src="https://cdn.firebase.com/js/client/2.0.4/firebase.js"></script>
         <script src="https://cdn.firebase.com/libs/angularfire/1.0.0/angularfire.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-        <script src="assets/js/app.js"></script>
+        <script src="app.js"></script>
         <script type="text/javascript" src="assets/js/filter-panel.js"></script>
     </body>
 </html>

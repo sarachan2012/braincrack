@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="assets/vendor/login/css/style.css">
+<link rel="stylesheet" href="assets/css/login-custom.css">
+<script src="assets/vendor/login/js/index.js"></script>
+
+
+   <div class="container">
+    <div class="info">
+    </div>
+</div>
+<div class="form" ng-controller="userCtrl">
+    <div class="thumbnail"><i class="fa fa-gift fa-5x"></i></div>
+    <form class="register-form" ng-submit="registerUser()">
+        <input type="text" placeholder="Display name" ng-model="reg_username" />
+        <input type="text" placeholder="Email" ng-model="reg_email" />
+        <input type="password" placeholder="Password" ng-model="reg_password" />
+        <button type="submit">create</button>
+        <p class="message">Already registered? <a href="#">Sign In</a></p>
+    </form>
+    <form class="login-form" ng-submit="login()">
+        <input type="text" placeholder="Email" ng-model="login_email" />
+        <input type="password" placeholder="Password" ng-model="login_password" />
+        <button type="submit">Let me in <i class="fa fa-arrow-circle-o-right"></i></button>
+        <p class="message">Not registered? <a href="#">Create an account</a></p>
+    </form>
+</div>

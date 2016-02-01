@@ -49,3 +49,24 @@ h6 {
     -moz-border-radius: 0px;
     -webkit-border-radius: 0px;
 }
+.extra-50-bottom-padding{
+    padding-bottom: 50px;
+}
+.extra-30-bottom-margin{
+    margin-bottom: 30px;
+}
+footer {
+    padding: 50px 0;
+    background-color: #f8f8f8;
+    display:block;
+    margin-bottom: 0px !important;
+}
+footer p.copyright {
+    margin: 15px 0 0;
+}
+.text-muted {
+    color: #777;
+}
+.small, small {
+    font-size: 85%;
+}

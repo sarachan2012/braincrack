@@ -1,24 +1,33 @@
 'use strict';
 
-var app = angular.module("myApp", ["firebase"]);
+var app = angular.module("myApp", ["ngRoute", "firebase"]);
 
 var firebase_URL = "https://assignmetn1-app.firebaseio.com/";
 var refDB = new Firebase(firebase_URL);
 
 var user_table = "users";
 
-// app.config(['$routeProvider', function($routeProvider) {
-//     $routeProvider
-//         .when('/', {
-//             templateUrl: "login.html",
-//             controller: userCtrl
-//         })
-//         .when('/profile', {
-//             templateUrl: "profile.html",
-//             controller: userCtrl,
-//         })
-//         .otherwise({ redirectTo: '/' });
-// }]);
+app.config(function($routeProvider, $locationProvider){
+    $routeProvider
+    .when('/', {
+        templateUrl: 'views/landing.html',
+    })
+    .when('/login', {
+        templateUrl: 'views/login.html',
+    })
+    .when('/products', {
+        template: 'products.html',
+    })
+    .when('/prod_desc/:prodId', {
+        templateUrl: 'views/prod_desc.html',
+        controller: 'ProductController'
+    })
+    .otherwise({ redirectTo: '/' });
+//    $locationProvider.html5Mode({
+//        enabled: true,
+//        requireBase: false
+//    });
+});
 
 var currentUser = refDB.getAuth();
 if (currentUser) {
@@ -59,7 +68,7 @@ app.controller('userCtrl', ["$scope", "$firebase", "$firebaseObject", "authUser"
         };
         // create user & user profile
         createUser(newUser);
-    };  
+    };
 
     $scope.logout = function(){
         refDB.unauth();
@@ -71,6 +80,27 @@ app.controller('userCtrl', ["$scope", "$firebase", "$firebaseObject", "authUser"
         $scope.user = {};
         $scope.user = $firebaseObject(refDB.child(user_table).child(id));
     };
+}]);
+
+app.controller('ProductController', ['$scope', function($scope,$routeParams){
+    var prod_json = {"products": [
+        {
+            "id": 1,
+            "name": "Test"
+        },
+        {
+            "id": 2,
+            "name": "Beispiel"
+        }
+    ]};
+    console.log(JSON.stringify($routeParams));
+    $scope.prodId = $routeParams.prodId;
+    $scope.product = {};
+
+    $scope.getProdDesc = function($scope){
+        $scope.product = $filter('filter')(prod_json.products, function (d) {return d.id === $scope.prodId;})[0];
+    };
+
 }]);
 
 function isEmpty(str) {
@@ -124,9 +154,9 @@ function userLogin(user_email, user_password) {
                 });
               }
             });
-            location.href = 'profile.html';        
+            location.href = 'profile.html';
         }
     });
-    
+
 };
 
