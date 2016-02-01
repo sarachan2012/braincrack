@@ -39,23 +39,42 @@ if (currentUser) {
     currentUser === null;
 }
 
+
 app.service('authUser', function() {
     var user = '';
+    var email = '';
     return {
         getUser: function(){
             return user;
         },
         setUser: function(value){
             user = value;
+        },
+        getUserEmail: function(){
+            return email;
+        },
+        setUserEmail: function(value){
+            email = value;
         }
     };
 });
+app.filter('range', function() {
+  return function(input, total) {
+    total = parseInt(total);
 
+    for (var i=0; i<total; i++) {
+      input.push(i);
+    }
+
+    return input;
+  };
+});
 app.controller('mainCtrl', ["$scope", "$firebase", "$firebaseObject", "authUser", "$filter", "$firebaseArray",
                             function($scope, $firebase, $firebaseObject, authUser, $filter, $firebaseArray) {
     authUser.setUser(currentUser === null ? "" : currentUser.uid );
+    authUser.setUserEmail(currentUser === null ? "" : currentUser.password.email );
     $scope.loggedUser = authUser.getUser();
-
+    $scope.loggedUserEmail = authUser.getUserEmail();
     // login & auth user
     $scope.login = function(){
         console.log('User Login ...');
@@ -92,11 +111,13 @@ app.controller('mainCtrl', ["$scope", "$firebase", "$firebaseObject", "authUser"
         var datetime = $filter('date')(new Date(), "yyyy-MM-dd HH:mm:ss");
         var randomRoomId = Math.round(Math.random() * 1000000000);
         var prodId = pid;
+        var rating = $scope.review.rating;
         refDB.child(review_table).child(prodId).child(randomRoomId).set({
             userid: userId,
             userName: userName,
             prodId: prodId,
             comment: comment,
+            rating: rating,
             created_on: datetime
         });
     };
@@ -106,35 +127,37 @@ app.controller('mainCtrl', ["$scope", "$firebase", "$firebaseObject", "authUser"
         // all server changes are applied in realtime
         $scope.reviews = $firebaseArray(messagesRef);
         // create a query for the most recent 25 messages on the server
-        var query = messagesRef.orderByChild("created_on");
+        // var query = messagesRef.orderByChild("created_on");
         // the $firebaseArray service properly handles database queries as well
-        $scope.filteredReviews = $firebaseArray(query);
+        // $scope.filteredReviews = $firebaseArray(query);
 //        console.log($scope.filteredReviews);
     };
-    $scope.addWishlist = function(user, pid){
-        var userId = user.uid;
-        var userName = user.email.replace(/@.*/, '');
+    $scope.addWishlist = function(uid, pid){
+        var userId = uid;
+        // var userName = email.replace(/@.*/, '');
         var datetime = $filter('date')(new Date(), "yyyy-MM-dd HH:mm:ss");
         var randomRoomId = Math.round(Math.random() * 1000000000);
         var isFulfilled = 0;
         refDB.child(wishlist_table).child(uid).child(randomRoomId).set({
             userid: userId,
-            userName: userName,
+            // userName: userName,
             prodId: pid,
             isFulfilled: isFulfilled,
             created_on: datetime
         });
     };
     $scope.getWishlist = function(user){
-        var userId = user.uid;
+        var userId = user;
         var messagesRef = new Firebase(firebase_URL + wishlist_table + '/' + userId);
         // download the data from a Firebase reference into a (pseudo read-only) array
         // all server changes are applied in realtime
-        $scope.wishlist = $firebaseArray(messagesRef);
+        $scope.wishlists = $firebaseArray(messagesRef);
+        // console.log($scope.wishlists);
         // create a query for the most recent 25 messages on the server
-        var query = messagesRef.orderByChild("created_on");
+        // var query = messagesRef.orderByChild("created_on");
         // the $firebaseArray service properly handles database queries as well
-        $scope.filteredWishlist = $firebaseArray(query);
+        // $scope.filteredWishlist = $firebaseArray(query);
+        // console.log($scope.filteredWishlist);
     };
     $scope.wishFulfil = function(user, rId){
 

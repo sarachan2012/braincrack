@@ -35,3 +35,6 @@
         border-right: none;
     }
 }
+input[type="radio"].styled:checked + label:after {
+    content:'';
+}
