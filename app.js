@@ -69,12 +69,14 @@ app.filter('range', function() {
     return input;
   };
 });
-app.controller('mainCtrl', ["$scope", "$firebase", "$firebaseObject", "authUser", "$filter", "$firebaseArray",
-                            function($scope, $firebase, $firebaseObject, authUser, $filter, $firebaseArray) {
+
+app.controller('mainCtrl', ["$scope", "$firebase", "$firebaseObject", "authUser", "$filter", "$firebaseArray", "$http",
+                            function($scope, $firebase, $firebaseObject, authUser, $filter, $firebaseArray, $http) {
     authUser.setUser(currentUser === null ? "" : currentUser.uid );
     authUser.setUserEmail(currentUser === null ? "" : currentUser.password.email );
     $scope.loggedUser = authUser.getUser();
     $scope.loggedUserEmail = authUser.getUserEmail();
+
     // login & auth user
     $scope.login = function(){
         console.log('User Login ...');
@@ -158,9 +160,6 @@ app.controller('mainCtrl', ["$scope", "$firebase", "$firebaseObject", "authUser"
         // the $firebaseArray service properly handles database queries as well
         // $scope.filteredWishlist = $firebaseArray(query);
         // console.log($scope.filteredWishlist);
-    };
-    $scope.wishFulfil = function(user, rId){
-
     };
 }]);
 

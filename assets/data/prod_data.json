@@ -1,0 +1,93 @@
+{
+    "products":{
+        { 
+            "prodId": "1", 
+            "name": "3D Pen", 
+            "price": "SGD 99", 
+            "description": "It's a pen that can draw in the air! 3Doodler is the 3D printing pen you can hold in your hand. Lift your imagination off the page!", 
+            "location": "Plaza Singapura, Level 4 #04-55", 
+            "shopName": "The Box",
+            "image": "assets/img/assets/img/featured_3d_pen.png"
+            "description_link": "prod_desc_1.html"
+            "tags": {"birthday", "just for him"}
+        },
+        { 
+            "prodId": "2", 
+            "name": "Bear Bean Bag", 
+            "price": "SGD 89", 
+            "description": "A soft squishy bean bag that's in a shape of a bear. How cute!", 
+            "location": "Ion Orchard", 
+            "shopName": "Somewhere",
+            "image": "assets/img/assets/img/featured_bear_bean_bag.jpg"
+            "description_link": "prod_desc_2.html"
+            "tags": {"cute"}
+        },
+        { 
+            "prodId": "3", 
+            "name": "Flavour Infused Water Bottle", 
+            "price": "SGD 35", 
+            "description": "Want to stay healthy? Put in your favourite fruits & let it's flavours be infused in your water!", 
+            "location": "Plaza Singapura, Level 4 #04-55", 
+            "shopName": "The Box",
+            "image": "assets/img/assets/img/featured_flavour_infused_water_bottle.png"
+            "description_link": "prod_desc_3.html"
+            "tags": {"gym"}
+        },
+        { 
+            "prodId": "4", 
+            "name": "Polaroid Hanger", 
+            "price": "SGD 29", 
+            "description": "Do you have a friend that loves taking or keeping polaroids? This polaroid hanger is gonna be the best gift he/she has ever received! Review your memories 365 days a year!", 
+            "location": "Plaza Singapura, Level 4 #04-55", 
+            "shopName": "The Box",
+            "image": "assets/img/assets/img/featured_polaroid.jpg"
+            "description_link": "prod_desc_4.html"
+            "tags": {"birthday", "just for him", "just for her"}
+        },
+        { 
+            "prodId": "5", 
+            "name": "Cat Hoodie", 
+            "price": "SGD 70", 
+            "description": "Are you a cat lover? You're gonna love this Cat Hoodie!", 
+            "location": "Westgate, Level 4 #04-55", 
+            "shopName": "The Box",
+            "image": "assets/img/assets/img/new_cat_hoodie.jpg"
+            "description_link": "prod_desc_5.html"
+            "tags": {"birthday", "just for him", "just for her"}
+        },
+        { 
+            "prodId": "6", 
+            "name": "Key Smart", 
+            "price": "SGD 25", 
+            "description": "Do you hate it when your keys jingle in your pocket? How about having those keys poking your legs through your jeans? Urghh! Key Smart is the one you're looking for! It's light, compact and simple to use!", 
+            "location": "Vivocity, Level 4 #04-55", 
+            "shopName": "Somewhere",
+            "image": "assets/img/assets/img/new_key_smart.jpg"
+            "description_link": "prod_desc_6.html"
+            "tags": {"birthday", "just for him"}
+        },
+        { 
+            "prodId": "7", 
+            "name": "Star Wars Waffle Maker", 
+            "price": "SGD 88", 
+            "description": "Are you a star wars fan? I bet you'll love having a star wars shaped waffles for breakfast!", 
+            "location": "Punggol mall, Level 4 #04-55", 
+            "shopName": "Somewhere",
+            "image": "assets/img/assets/img/new_star_wars_waffle_maker.jpg"
+            "description_link": "prod_desc_7.html"
+            "tags": {"birthday", "just for him"}
+        },
+        { 
+            "prodId": "8", 
+            "name": "Super Hero Bookend", 
+            "price": "SGD 25", 
+            "description": "To all marvel fans and book junkies, this is something you must have in your collection!", 
+            "location": "Somerset 313, Level 4 #04-55", 
+            "shopName": "Somewhere",
+            "image": "assets/img/assets/img/new_star_wars_waffle_maker.jpg"
+            "description_link": "prod_desc_8.html"
+            "tags": {"birthday", "just for him"}
+        }
+    }
+}
+
